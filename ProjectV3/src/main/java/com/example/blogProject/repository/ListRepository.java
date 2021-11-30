@@ -13,10 +13,8 @@ import java.util.List;
 @Repository
 public interface ListRepository extends JpaRepository<ArticleEntity,Long> {
 
-
-
     //index  통합검색
-    @Query(value ="Select m Member m where m.name Like %?1%")
+    @Query(value ="Select m from Member m where m.name Like %:keyword%")
     List<Member> allSearch(@Param(value="keyword")String keyword);
 
 
