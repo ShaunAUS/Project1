@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<form th:action="@{/geulRegister}" method="post">
+  <div class="mb-3">
+    <label >제목</label>
+    <input type="text" name="title">
+
+  </div>
+
+
+  <div class="mb-3">
+    <label >작성자</label>
+    <input type="text" name="writer">
+  </div>
+
+  <div class="mb-3">
+    <label >단가</label>
+    <input type="text" name="cost">
+  </div>
+
+  <div class="mb-3">
+    <label >인원수</label>
+    <input type="text" name="memberNum">
+  </div>
+
+
+
+  <div class="mb-3">
+    <label >내용</label>
+
+    <textarea rows="20" cols="100"  name="contents" placeholder="내용"></textarea>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+
+
+
+
+
+</form>
+
+</body>
+</html>
