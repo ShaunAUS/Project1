@@ -73,6 +73,8 @@ public class ListController {
         //전체 목록조회
         List<ArticleEntity> regResult = service.registerResult();
 
+
+
         model.addAttribute("regResult",regResult);
 
         return "urgent";
