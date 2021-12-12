@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Shop Homepage - Start Bootstrap Template</title>r
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="bootstrap/img/indexImg/favicon.ico" />
+  <!-- Bootstrap icons-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="bootstrap/css/indexCss/styles.css" rel="stylesheet" />
+  <link href="bootstrap/css/urgentCss/urgent.css" rel="stylesheet" />
+</head>
+
+<body>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container px-4 px-lg-5">
+    <a class="navbar-brand" href="/">FREE WROLD</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+
+        <li class="nav-item"><a class="nav-link" href="urgent">Urgent</a></li>
+        <!--<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#!">All Products</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+            <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+          </ul>
+        </li>-->
+      </ul>
+      <form class="d-flex">
+        <button class="btn btn-outline-dark" type="submit">
+          <i class="bi-cart-fill me-1"></i>
+          회원가입
+
+        </button>
+      </form>
+
+      <form class="d-flex">
+        <button class="btn btn-outline-dark" >
+          <i class="bi-cart-fill me-1"></i>
+          <a th:href="@{/register}">글등록</a>
+
+        </button>
+      </form>
+
+    </div>
+  </div>
+</nav>
+<!-- Header-->
+<header class="bg-dark py-5">
+  <div class="container px-4 px-lg-5 my-5">
+    <div class="text-center text-white">
+      <h1 class="display-4 fw-bolder">FREE WROLD</h1>
+      <p class="lead fw-normal text-white-50 mb-0"></p>
+    </div>
+  </div>
+
+  <!--검색-->
+  <!--기술 or 이름 검색-->
+  <div class="input-group input-group-rounded">
+    <input class="input-group-field" type="search">
+    <div class="input-group-button">
+      <input type="submit" class="button secondary" value="Search">
+    </div>
+  </div>
+
+</header>
+
+
+
+
+<!--urgent 페이지 테이블-->
+<table class="table-expand">
+  <thead>
+  <tr class="table-expand-row">
+    <th width="20%" >기간</th>
+    <th width="75%" height ="100%">내용</th>
+    <th class="text-right"  >지역</th>
+    <th class="text-right"  >작성시간</th>
+    <th class="text-right"  >단가</th>
+    <th width="100%">팀원수</th>
+  </tr>
+  </thead>
+
+  <!--테이블 내용-->
+  <tbody>
+  <div th:each="rr:${usr}">
+    <tr class="table-expand-row" data-open-details>
+      <td th:text="${rr.date}"></td>
+      <td th:text="${rr.content}"></td>
+      <td th:text="${rr.area}"></td>
+      <td class="text-right" th:text="${rr.cost}"></td>
+      <td th:each="{rr.memberNum}"></td>
+    </tr>
+
+    <tr class="table-expand-row-content">
+      <td colspan="8" class="table-expand-row-nested">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque unde quaerat reprehenderit ipsa ipsam, adipisci facere repellendus impedit at, quisquam dicta optio veniam quia nesciunt, inventore quod in neque magni?</p>
+      </td>
+    </tr>
+
+
+
+
+    <!--두번쨰줄-->
+    <tr class="table-expand-row" data-open-details>
+      <td>July 15</td>
+      <td>4 items</td>
+      <td class="text-right">$1.30</td>
+      <td>scheduled <span class="expand-icon"></span></td>
+    </tr>
+
+    <tr class="table-expand-row-content">
+      <td colspan="8" class="table-expand-row-nested">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque unde quaerat reprehenderit ipsa ipsam, adipisci facere repellendus impedit at, quisquam dicta optio veniam quia nesciunt, inventore quod in neque magni?</p>
+      </td>
+      </td>
+    </tr>
+
+
+
+    <!--세번쨰줄-->
+    <tr class="table-expand-row" data-open-details>
+      <td>June 15</td>
+      <td>1 item</td>
+      <td class="text-right">$0.10</td>
+      <td>carried over <span class="expand-icon"></span></td>
+    </tr>
+
+    <tr class="table-expand-row-content">
+      <td colspan="8" class="table-expand-row-nested">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque unde quaerat reprehenderit ipsa ipsam, adipisci facere repellendus impedit at, quisquam dicta optio veniam quia nesciunt, inventore quod in neque magni?</p>
+      </td>
+      </td>
+    </tr>
+
+
+
+    <!--네번쨰줄-->
+    <tr class="table-expand-row" data-open-details>
+      <td>May 15</td>
+      <td>1 item</td>
+      <td class="text-right">$0.10</td>
+      <td>carried over <span class="expand-icon"></span></td>
+    </tr>
+
+    <tr class="table-expand-row-content">
+      <td colspan="8" class="table-expand-row-nested">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque unde quaerat reprehenderit ipsa ipsam, adipisci facere repellendus impedit at, quisquam dicta optio veniam quia nesciunt, inventore quod in neque magni?</p>
+      </td>
+      </td>
+    </tr>
+
+
+
+
+
+
+    <!--다섯번째줄-->
+    <tr class="table-expand-row" data-open-details>
+      <td>April 15</td>
+      <td>1 item</td>
+      <td class="text-right">$0.10</td>
+      <td>carried over <span class="expand-icon"></span></td>
+    </tr>
+
+    <tr class="table-expand-row-content">
+      <td colspan="8" class="table-expand-row-nested">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque unde quaerat reprehenderit ipsa ipsam, adipisci facere repellendus impedit at, quisquam dicta optio veniam quia nesciunt, inventore quod in neque magni?</p>
+      </td>
+      </td>
+    </tr>
+
+
+
+    <!--6-->
+    <tr class="table-expand-row" data-open-details>
+      <td>March 15</td>
+      <td>1 item</td>
+      <td class="text-right">$0.10</td>
+      <td>carried over <span class="expand-icon"></span></td>
+    </tr>
+
+    <tr class="table-expand-row-content">
+      <td colspan="8" class="table-expand-row-nested">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque unde quaerat reprehenderit ipsa ipsam, adipisci facere repellendus impedit at, quisquam dicta optio veniam quia nesciunt, inventore quod in neque magni?</p>
+      </td>
+      </td>
+    </tr>
+
+
+
+    <!--7-->
+    <tr class="table-expand-row" data-open-details>
+      <td>February 15</td>
+      <td>2 items</td>
+      <td class="text-right">$1.20</td>
+      <td>paid <span class="expand-icon"></span></td>
+    </tr>
+
+    <tr class="table-expand-row-content">
+      <td colspan="8" class="table-expand-row-nested">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque unde quaerat reprehenderit ipsa ipsam, adipisci facere repellendus impedit at, quisquam dicta optio veniam quia nesciunt, inventore quod in neque magni?</p>
+      </td>
+      </td>
+    </tr>
+
+
+
+
+    <!--8-->
+    <tr class="table-expand-row" data-open-details>
+      <td>January 15</td>
+      <td>5 items</td>
+      <td class="text-right">$0.50</td>
+      <td>carried over <span class="expand-icon"></span></td>
+    </tr>
+
+    <tr class="table-expand-row-content">
+      <td colspan="8" class="table-expand-row-nested">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque unde quaerat reprehenderit ipsa ipsam, adipisci facere repellendus impedit at, quisquam dicta optio veniam quia nesciunt, inventore quod in neque magni?</p>
+      </td>
+      </td>
+    </tr>
+
+    <!--9-->
+    <tr class="table-expand-row" data-open-details>
+      <td>December 15</td>
+      <td>2 items</td>
+      <td class="text-right">$0.20</td>
+      <td>carried over <span class="expand-icon"></span></td>
+    </tr>
+
+    <tr class="table-expand-row-content">
+      <td colspan="8" class="table-expand-row-nested">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque unde quaerat reprehenderit ipsa ipsam, adipisci facere repellendus impedit at, quisquam dicta optio veniam quia nesciunt, inventore quod in neque magni?</p>
+      </td>
+      </td>
+    </tr>
+  </div>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+<!-- Footer-->
+<footer class="py-5 bg-dark">
+  <div class="container"><p class="m-0 text-center text-white">Welcome to FREE WORLD</p></div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="bootstrap/js/indexJs/scripts.js"></script>
+<script src="bootstrap/js/urgentJs/urgent.js"></script>
+</body>
+</html>
