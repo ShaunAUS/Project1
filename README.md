@@ -4,14 +4,15 @@ SpringDataJPA 를 활용한 개인 프로젝트입니다.
 
 Backend
 
-JAVA
-SpringBoot
-Spring Data JPA
-Spring Security
-AWS-RDS
-ThymeLeafe
+- JAVA
+- SpringBoot
+- Spring Data JPA
+- Spring Security
+- ThymeLeafe
+
 Frontend
 
-HTML
-CSS
-JavaScript
+- HTML
+- CSS
+- JavaScript
+- BootStrap
